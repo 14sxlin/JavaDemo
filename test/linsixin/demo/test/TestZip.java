@@ -7,8 +7,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import linsixin.demo.ZipPackage;
-import linsixin.demo.ZipPackage.IllegalFileName;
+import zip.ZipPackage;
+import zip.ZipPackage.IllegalFileName;
 
 public class TestZip {
 
