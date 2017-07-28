@@ -9,7 +9,7 @@ public class Main {
 	public static final Logger LOGGER = Logger.getLogger("simba");
 	
 	public static final String XML = "xml";
-	public static final String XLSX = "XLSX";
+	public static final String XLSX = "xlsx";
 	
 	public static void main(String[] args) {
 		if(argsWrong(args)) {
@@ -52,8 +52,8 @@ public class Main {
 	private static boolean isType(String file,String type) {
 		if(file.contains("."))
 		{
-			if("xlsx".equals(
-					file.substring(file.indexOf(".")+1)))
+			if(type.equals(
+					file.substring(file.indexOf(".")+1).toLowerCase()))
 				return true;
 		}
 		return false;

@@ -47,8 +47,8 @@ public class Excel2XmlTransformer {
 	
 	private String itemName;
 	private ArrayList<String> headers ;
+	
 	private Transformer transformer;
-
 	private File xlsxFile;
 	private InputStream in;
 	private String output;
@@ -57,6 +57,7 @@ public class Excel2XmlTransformer {
 		this.xlsxFile = new File(xlsxFile);
 		this.output = output;
 	}
+	
 	
 	public void doParse() throws IOException{
 		try {
