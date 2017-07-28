@@ -11,6 +11,8 @@ import javax.xml.transform.TransformerException;
 import org.junit.Test;
 
 import excel.Excel2XmlTransformer;
+import excel.ExcelDoc;
+import excel.SystemExcelDoc;
 
 
 
@@ -24,8 +26,8 @@ public class TestExcel2XmlTransformer {
 		File xmlFile = new File(target);
 		if(xmlFile.exists())
 			xmlFile.delete();
-		
-		transformer = new Excel2XmlTransformer(src,target);
+		ExcelDoc doc = new SystemExcelDoc(src);
+		transformer = new Excel2XmlTransformer(doc,target);
 		transformer.doParse();
 		
 		assertTrue(xmlFile.exists());

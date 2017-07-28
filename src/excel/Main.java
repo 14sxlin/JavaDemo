@@ -41,8 +41,9 @@ public class Main {
 	
 	public static void transform(String xlsx, String xml) {
 		try {
+			SystemExcelDoc doc = new SystemExcelDoc(xlsx);
 			Excel2XmlTransformer transformer = 
-					new Excel2XmlTransformer(xlsx, xml);
+					new Excel2XmlTransformer(doc, xml);
 			transformer.doParse();
 		} catch (IOException e) {
 			LOGGER.error(e);
