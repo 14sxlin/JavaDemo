@@ -18,30 +18,30 @@ import org.w3c.dom.Element;
 
 public class TestCreateXml {
 
-	@Test
-	public void test() throws ParserConfigurationException, TransformerException {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document doc = builder.newDocument();
-		Element elem = doc.createElement("tag1");
-		Element elem1 = doc.createElement("tag2");
-		elem1.setAttribute("isTest", "true");
-		elem1.setTextContent("this is a test tag");
-		
-		Element childElem = doc.createElement("child");
-		childElem.setTextContent("I'm a child");
-		
-		elem1.appendChild(childElem);
-		
-		doc.appendChild(elem);
-		elem.appendChild(elem1); // root element should have only one
-		
-		
-		TransformerFactory tansFactory = TransformerFactory.newInstance();
-		Transformer transformer = tansFactory.newTransformer();
-		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		transformer.transform(new DOMSource(doc),
-				new StreamResult(new File("D:/system.xml")));
-	}
+    @Test
+    public void test() throws ParserConfigurationException, TransformerException {
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        final DocumentBuilder builder = factory.newDocumentBuilder();
+        final Document doc = builder.newDocument();
+        final Element elem = doc.createElement("tag1");
+        final Element elem1 = doc.createElement("tag2");
+        elem1.setAttribute("isTest", "true");
+        elem1.setTextContent("this is a test tag");
+
+        final Element childElem = doc.createElement("child");
+        childElem.setTextContent("I'm a child");
+
+        elem1.appendChild(childElem);
+
+        doc.appendChild(elem);
+        elem.appendChild(elem1); // root element should have only one
+
+
+        final TransformerFactory tansFactory = TransformerFactory.newInstance();
+        final Transformer transformer = tansFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.transform(new DOMSource(doc),
+                new StreamResult(new File("D:/system.xml")));
+    }
 
 }
