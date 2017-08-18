@@ -5,6 +5,7 @@ object RadixTrans extends App {
     for( begin <- Array('a','A');
           i <- 0 to 25){
       print(begin + i toChar) // so great
+//      print((char)(begin + i)) // in java use this form
     }
   }
 
